@@ -11,10 +11,6 @@
   </target>
 
   <target name="-app:compile" extensionOf="pre-package" depends="-app:compile:clear" unless="xp.app.exist">
-    <copy todir="${build.target.app}">
-      <fileset refid="build.appSourceDirectory"/>
-      <fileset refid="build.configSourceDirectory"/>
-    </copy>
     <copy todir="${build.target.app}/src">
       <fileset refid="build.sources.fileset.php"/>
       <cutdirsmapper dirs="1"/>
@@ -23,8 +19,17 @@
       <fileset refid="build.sources.fileset.xsl"/>
       <cutdirsmapper dirs="1"/>
     </copy>
+    <copy todir="${build.target.app}/doc_root">
+      <fileset refid="build.appSourceDirectory"/>
+      <cutdirsmapper dirs="1"/>
+    </copy>
+    <copy todir="${build.target.app}/etc">
+      <fileset refid="build.configSourceDirectory"/>
+      <cutdirsmapper dirs="1"/>
+    </copy>
     <copy todir="${build.target.app}/conf">
-      <fileset dir="${basedir}/conf" erroronmissingdir="false"/>
+      <fileset refid="build.deploySourceDirectory"/>
+      <cutdirsmapper dirs="1"/>
     </copy>
   </target>
 
@@ -78,7 +83,7 @@
       <fileset dir="${build.target.app}" includes="**/*"/>
     </touch>
   </target>
-  
+
   <target name="app:package:descriptor" extensionOf="pre-package" unless="xp.app.exist">
     <copy todir="${build.target.app}">
       <fileset refid="build.containerConfigDirectory"/>
