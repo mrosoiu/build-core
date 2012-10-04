@@ -27,7 +27,7 @@
 
   <!-- Required in build-app -->
   <fileset id="build.appSourceDirectory" dir="${basedir}/src/main/" includes="webapp/**" erroronmissingdir="false" followsymlinks="false"/>
-  <fileset id="build.configSourceDirectory" dir="${basedir}/src/main/" includes="config/**" erroronmissingdir="false" followsymlinks="false"/>
+  <fileset id="build.configSourceDirectory" dir="${basedir}/src/main/" includes="etc/**" erroronmissingdir="false" followsymlinks="false"/>
   <fileset id="build.deploySourceDirectory" dir="${basedir}/src/main/" includes="deploy/**" erroronmissingdir="false" followsymlinks="false"/>
   <fileset id="build.containerConfigDirectory" dir="${basedir}/src/resources/" erroronmissingdir="false" followsymlinks="false">
     <include name="container/*"/>
