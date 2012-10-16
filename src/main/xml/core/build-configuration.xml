@@ -16,7 +16,7 @@
   </fileset>
   <fileset id="build.testSourceDirectory" dir="${basedir}/src/test/" erroronmissingdir="false"/>
   <fileset id="build.testConfigurations" dir="${basedir}/src/test" erroronmissingdir="false">
-    <include name="ini/*.ini"/>
+    <include name="config/unittest/*.ini"/>
   </fileset>
   <fileset id="build.resources" dir="${basedir}/src/main" erroronmissingdir="false">
     <include name="resources/**"/>
